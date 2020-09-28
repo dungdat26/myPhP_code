@@ -2,8 +2,12 @@
 $mang_dong_vat=array(
 array("ten_dong_vat"=>"hổ","mo_ta"=>"còn gọi là cọp, hùm, ông ba mươi) (Panthera tigris) "),
 array("ten_dong_vat"=>"Khỉ","mo_ta"=>"Monkey is a common name that may refer to groups or species of mammals, in part, the simians of infraorder Simiiformes."),
-array("ten_dong_vat"=>"chim","mo_ta"=>"Birds are a group of warm-blooded vertebrates constituting the class Aves, characterized by feathers, toothless beaked jaws, the laying of hard-shelled eggs")
+array("ten_dong_vat"=>"chim","mo_ta"=>"Birds are a group of warm-blooded vertebrates constituting the class Aves, characterized by feathers, toothless beaked jaws, the laying of hard-shelled eggs"),
 );
+$id_dong_vat = 0;
+if(isset($_GET['id_dong_vat'])){
+$id_dong_vat = $_GET['id_dong_vat']; 
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,22 +24,33 @@ array("ten_dong_vat"=>"chim","mo_ta"=>"Birds are a group of warm-blooded vertebr
 </head>
 <body>
 <div class="container">
-    Từ điển động vật
+   <title-block>Từ điển động vật</title-block> 
 <form action="" method="post">
 
 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
     <legend>từ điển động vật</legend>
-
-   <div class="list-group">
-       <a href="#" class="list-group-item active">Con hổ</a>
-       <a href="#" class="list-group-item">Item 2</a>
-       <a href="#" class="list-group-item">Item 3</a>
+    <div class="danh_sach_chon_dong_vat">
+       <?php
+        foreach($mang_dong_vat as $key => $dong_vat){        
+        ?>
+   <div class="ten_dong_vat">
+       <a href="?id_dong_vat=<?php echo $key; ?>"> <?php echo $dong_vat['ten_dong_vat']; ?></a>
+       
    </div>
-   
+   <?php
+                }
+    ?>
 </div>
- 
+ </div>
  <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+     <div class="title_block"> 
+     Thông tin động vật
+     </div>
+     <div class="mieu_ta">
+     <?php echo $mang_dong_vat[$id_dong_vat]['mo_ta']; ?>
      
+     
+     </div>
  </div>
  
 
