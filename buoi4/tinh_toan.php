@@ -1,29 +1,33 @@
 <?php 
 class pheptinh{
-    public $so_thu_nhat,$so_thu_hai;
-    function __construct($so_thu_hai,$so_thu_nhat){
-        $this->so_thu_nhat=$so_thu_nhat;
-        $this->so_thu_hai=$so_thu_hai;
+        public $so_thu_nhat ,$so_thu_hai ;
+    function __construct($value_1,$value_2)
+    {
+        $this->so_thu_hai=$value_2;
+        $this->so_thu_nhat=$value_1;
     }
-    function pheptinh(){
-        $so_thu_nhat='';
-        $so_thu_hai='';
-        $toantu='';
-        switch ($toantu) {
-            case '1':
-              return $this->$so_thu_nhat + $so_thu_hai; 
-                break;
-            case '2':
-                return $this->$so_thu_nhat - $so_thu_hai; 
-                break;
-            case '3':
-                return $this->$so_thu_nhat * $so_thu_hai; 
-                break;
-             case '4':
-                return $this->$so_thu_nhat / $so_thu_hai; 
-                break;
-            
-        }
+    function cong()
+    {
+       return $this->so_thu_nhat + $this->so_thu_hai;
+        
     }
+    function tru()
+    {
+       return $this->so_thu_nhat - $this->so_thu_hai;
+        
+    }
+    function nhan()
+    {
+       return $this->so_thu_nhat * $this->so_thu_hai;
+        
+    }
+    function chia()
+    {
+       return $this->so_thu_nhat /  $this->so_thu_hai;
+        
+    }
+
+
+
 }
 ?>
