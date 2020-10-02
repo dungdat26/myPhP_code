@@ -48,9 +48,10 @@ $f = fopen($_POST['ten_file'], "a+") or exit ("Không thể mở file!");
         </form>
         <div class="hien_thi">
         <?php
-        $f = fopen($_POST['ten_file'], "a+") or exit ("Không thể mở file!");
+        if(isset($_POST['ten_file']));
+        $f = fopen($_POST['ten_file'],"a+") or exit ("Không thể mở file!");
         while(!feof($f)){
-                echo fgets($f) .'<br/>';
+                echo fgets($f) . PHP_EOL;
                 }
 
         ?>
