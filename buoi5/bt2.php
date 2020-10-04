@@ -1,13 +1,8 @@
 <?php 
-
+include('./sach.php');
 if(isset($_POST['ma_sach']) && isset($_POST['ten_sach'])  && isset($_POST['don_gia'])  && isset($_POST['tac_gia'])  && isset($_POST['nha_xuat_ban'])  && isset($_POST['hinh']) ){
-    $f = fopen('ds_sach.txt', "a+") or exit ("Không thể mở file!");
-    while(!feof($f)){
-             echo fgets($f) ;
-            }
-    $noidung= $_POST['ma_sach'].'||'.$_POST['ten_sach'].'||'.$_POST['don_gia'].'||'.$_POST['tac_gia'].'||'.$_POST['nha_xuat_ban'].'||' .$_POST['hinh'] .PHP_EOL; 
-    fwrite($f,$noidung);   
-
+    $sach_new = new sach($_POST['ma_sach'], $_POST['ten_sach'], $_POST['don_gia'], $_POST['tac_gia'], $_POST['nha_xuat_ban'], $_POST['hinh']);
+    $sach_new->luu_sach();       
 }
 ?>
 <!DOCTYPE html>
