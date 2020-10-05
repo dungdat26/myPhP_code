@@ -12,7 +12,7 @@ class sach{
     function luu_sach(){
         $f = fopen('./data_sach/ds_sach.txt', "a+") or exit ("Không thể mở file!");
             while(!feof($f)){
-             echo fgets($f) ;
+             fgets($f) ;
             }
             $noidung= $this->ma_sach.'||'.$this->ten_sach.'||'.$this->don_gia.'||'.$this->tac_gia.'||'.$this->nha_xuat_ban.'||' .$this->hinh .PHP_EOL; 
             fwrite($f,$noidung);
@@ -53,5 +53,26 @@ class sach{
     <?php
     }
 
+    function in_thong_tin_chi_tiet_sach(){
+        ?>
+        <div class="item_thong_tin_sach">
+            <div class="ten_sach">
+                <?php echo $this->ten_sach; ?>
+            </div>
+            <div class="hinh_sach">
+                <img src="<?php echo $this->hinh; ?>" alt="">
+            </div>
+            <div class="tac_gia">
+                <?php echo $this->tac_gia; ?>
+            </div>
+            <div class="don_gia">
+                <?php echo $this->don_gia; ?>
+            </div>
+            <div class="nha_xuat_ban">
+                <?php echo $this->nha_xuat_ban; ?>
+            </div>
+        </div>
+        <?php
+    }
 } 
 ?>

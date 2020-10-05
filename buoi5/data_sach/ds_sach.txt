@@ -16,3 +16,11 @@ ms001||ta thấy hoa vàng trên cỏ xanh||100000||Nguyễn Nhật Ánh||Kim Đ
 ||||||||||
 ms001||đắc nhân tâm||100000||Nguyễn Nhật Ánh||Kim Đồng ||hinh.png
 ms002||đắc nhân tâm||100000||Nguyễn Nhật Ánh||trẻ||hinh.png
+ms03||Infernal||130000||dan brown||Kim Đồng ||3.png
+ms03||Infernal||130000||dan brown||Kim Đồng ||3.png
+ms04||Lost symbol||130000||dan brown||trẻ||3.png
+ms04||Lost symbol||130000||dan brown||trẻ||3.png
+ms001||ta thấy hoa vàng trên cỏ xanh||1000||Nguyễn Nhật Ánh||Kim Đồng ||./images/119194149_3438719609521105_4171218709270270452_o.jpg
+ms001||ta thấy hoa vàng trên cỏ xanh||100000||Nguyễn Nhật Ánh||Kim Đồng ||./images/119194149_3438719609521105_4171218709270270452_o.jpg
+ms001||ta thấy hoa vàng trên cỏ xanh||100000||Nguyễn Nhật Ánh||Kim Đồng ||./images/119194149_3438719609521105_4171218709270270452_o.jpg
+ms001||ta thấy hoa vàng trên cỏ xanh||2000000||dan brown||Kim Đồng ||./images/119085919_202656237926090_188511282057059416_n.jpg
