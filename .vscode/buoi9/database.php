@@ -18,7 +18,6 @@ $statement->execute();
 //$result = $statement->fetch(PDO::FETCH_ASSOC);
 $result = $statement->fetchAll(PDO::FETCH_OBJ);
 
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,44 +35,25 @@ $result = $statement->fetchAll(PDO::FETCH_OBJ);
 </head>
 <body>
     <div class="container">
-    <form action="" method="post">
-    <table class="table table-striped table-hover"  border="1, solid, #ccc" spacing ="5px">
-    <tr>
-        <th>ID </th>
-        <th>Tên Sách </th>
-        <th>Đơn Giá </th>
-        <th>Giá Bìa</th>
-        <th>Chọn</th>
-    </tr>
-    <tr>
-        <td>
+    <?php
+    //echo '<pre>',print_r($result),'</pre>';
+    foreach($result as $item_sach){
+        ?>
+        <div class="ten_sach">
+            <?php echo $item_sach->ten_sach; ?>
+        </div>
         <?php
-         foreach($result as $item_id){
-                ?>
-                <div class="id_tac_gia">
-                    <?php echo $item_id->id; ?>
-                </div>
-                <?php
-        }
+    }
+    ?>
+     <?php
+    foreach($result as $item_id_tac_gia){
         ?>
-        </td>
-        <td> 
-            <?php
-            //echo '<pre>',print_r($result),'</pre>';
-            foreach($result as $item_sach){
-                ?>
-                <div class="ten_sach">
-                    <?php echo $item_sach->ten_sach; ?>
-                </div>
-            <?php
-        }
-        ?>
-        </td>
-        
-     
-    </tr>
-    </table>
-    </form>
+        <div class="id_tac_gia">
+            <?php echo $item_id_tac_gia->id_tac_gia; ?>
+        </div>
+        <?php
+    }
+    ?>
     </div>
 </body>
 </html>
