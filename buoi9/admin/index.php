@@ -4,7 +4,7 @@ if(isset ($_GET['page'])){
      include_once('./pages/ds_sach.php');
     }
     else{
-        include_once('./pages/404.php');
+        include_once('../pages/trang_chu.php');
     }
 }
 else{

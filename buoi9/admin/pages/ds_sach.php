@@ -54,7 +54,7 @@ $so_trang = ceil($so_luong_sach/$so_sach_tren_trang);
             Danh Sách Sách
         </div>
         <?php
-        echo $so_trang;
+        echo $so_trang; 
         ?>
 
         <!-- cách phân trang 1 -->
