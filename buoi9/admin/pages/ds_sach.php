@@ -13,7 +13,7 @@ $statement->execute();
 $ds_sach = $statement->fetchAll(PDO::FETCH_OBJ);
 
 
-$trang_hien_tai = (isset($_GET['trang']))?$_GET['trang']:0;
+$trang_hien_tai = (isset($_GET['trang']))?$_GET['trang']:10;
 
 //lay danh sach theo trang
 $SQL_query = "SELECT * FROM bs_sach LIMIT " . $trang_hien_tai * $so_sach_tren_trang . ",$so_sach_tren_trang";

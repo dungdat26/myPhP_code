@@ -5,7 +5,8 @@ function in_ds_sach_theo_data_truyen_vao($ds_sach_can_in){
         <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 item_sach">
             <div class="">
                 <div class="hinh_sach">
-                    <img src="./images/sach/<?php echo $item_sach->hinh; ?>" alt="">
+                  <a href="/myPhP_code/buoi9/?page=chi_tiet_sach&id_sach=<?php echo $item_sach->id ?>">
+                  <img src="./images/sach/<?php echo $item_sach->hinh; ?>" alt="">
                 </div>
                 <div class="ten_sach">
                 <?php echo $item_sach->ten_sach; ?>
@@ -21,10 +22,19 @@ function in_ds_sach_theo_data_truyen_vao($ds_sach_can_in){
                         <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
                         Mua ngay
                     </a>
+                  </a>
                 </div>
             </div>
         </div>
         <?php
+    }
+}
+function import_file($url_file){
+    if(file_exists($url_file . '.php')){
+        include_once($url_file . '.php');
+    }
+    else{
+        echo 'Check lại file này dùm ' . $url_file . '.php vì nó không tồn tại';
     }
 }
 ?>

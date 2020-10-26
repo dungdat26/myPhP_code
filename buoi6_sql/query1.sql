@@ -98,7 +98,8 @@ SELECT ten_sach,gioi_thieu,trong_luong,don_gia ,gia_bia
 FROM bs_sach  
 WHERE (gioi_thieu LIKE '%mạnh%' OR gioi_thieu LIKE '%magic%'  )
 ORDER BY don_gia DESC
-LIMIT 3 
+LIMIT 3
+
 /*1.19 */
 SELECT *
 FROM bs_nha_xuat_ban
@@ -106,7 +107,6 @@ WHERE ten_nha_xuat_ban IS NOT NULL
 AND dia_chi IS NOT NULL
 AND dien_thoai IS NOT NULL
 AND email IS NOT NULL;
-
 
 /*1.20 */
 SELECT*
