@@ -54,7 +54,7 @@ class xl_loai_sach extends database{
         foreach($ds_loai_cha as $item_loai_cha){
             ?>
             <li class="dropdown-submenu">
-                <a href="/myPhP_code/myPhP_code/buoi9/?page=loai_sach&id_loai_sach=<?php echo $item_loai_cha->id; ?>"><?php echo $item_loai_cha->ten_loai_sach; ?></a>
+                <a href="/myPhP_code/buoi9/?page=loai_sach&id_loai_sach=<?php echo $item_loai_cha->id; ?>"><?php echo $item_loai_cha->ten_loai_sach; ?></a>
                 <?php $this ->print_de_quy_loai_con($item_loai_cha);?>
             </li>
             <?php
@@ -68,7 +68,7 @@ class xl_loai_sach extends database{
             foreach ($item_loai_cha->ds_con as $loai_sach_con){
             ?>
             <li>
-                <a href="/myPhP_code/myPhP_code/buoi9/?page=loai_sach&id_loai_sach=<?php echo $loai_sach_con->id; ?>"><?php echo $loai_sach_con->ten_loai_sach; ?></a>
+                <a href="/myPhP_code/buoi9/?page=loai_sach&id_loai_sach=<?php echo $loai_sach_con->id; ?>"><?php echo $loai_sach_con->ten_loai_sach; ?></a>
                 <?php $this ->print_de_quy_loai_con($loai_sach_con);?>
             </li>
             <?php

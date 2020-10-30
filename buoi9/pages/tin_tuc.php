@@ -2,14 +2,14 @@
    import_file('./model/xl_sach');
    $xl_tin_tuc = new xl_sach();
 
-   $ds_tin_tuc=$xl_tin_tuc->lay_tin_tuc_sach($_GET['id_tin']);
+   $ds_tin_tuc=$xl_tin_tuc->lay_tin_tuc();
 
-   echo '<pre>',print_r($ds_tin_tuc),'</pre>'
+//    echo '<pre>',print_r($ds_tin_tuc),'</pre>'
 ?>
-<!DOCTYPE html>
+
 
 <link rel="stylesheet" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
-    <script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+<script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
 
 
 <body>
@@ -17,36 +17,30 @@
 <div class="title_page">
             Tin Tức
         </div>
-        <table id="table_sach" class="table table-striped table-hover">
+        <table id="table_tin_tuc" class="table table-striped table-hover">
             <thead>
                 <tr>
                 
-                    <th>ID</th>
-                    <th>Đơn giá</th>
-                    <th>Giá bìa</th>
-                    <th>Chọn</th>
+                    <th></th>
+                    <th></th>
+                   
                 </tr>
             </thead>
             <tbody id="data_show">
+            <td>
             <?php
-                foreach($ds_tin_tuc as $item_tin){
+                in_ds_tin_theo_data_truyen_vao($ds_tin_tuc);
                 ?>
-                <td><?php echo $item_tin; ?></td>
-                <?php
-                }
-                ?>
+            </td>
             </tbody>
         </table>
 
 
 
 <script>
-            //cách phân trang 2
-        $(document).ready( function () {
-           $('#table_sach').DataTable();
-        } );
-
-     
+       $(document).ready( function () {
+    $('#table_tin_tuc').DataTable();
+} );
         </script>
 </div>
 </body>

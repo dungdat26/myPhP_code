@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 include_once('./model/xl_slide_banner.php');
 include_once('./model/xl_sach.php');
 
@@ -23,8 +24,17 @@ if(isset($_GET['page'])){
     else if($_GET['page']=='tin_tuc') {
         include_once('./pages/tin_tuc.php');
     }
+    else if($_GET['page']=='tin_chi_tiet') {
+        include_once('./pages/tin_chi_tiet.php');
+    }
     else if($_GET['page']=='gio_hang') {
         include_once('./pages/trang_gio_hang.php');
+    }
+    else if($_GET['page']=='thanh_toan') {
+        include_once('./pages/thanh_toan.php');
+    }
+    else if($_GET['page']=='don_hang') {
+        include_once('./pages/trang_don_hang.php');
     }
     else{
         include_once('./pages/trang_chu.php');

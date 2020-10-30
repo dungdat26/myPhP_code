@@ -10,12 +10,12 @@ class xl_sach extends database{
     function ds_sach_theo_dieu_kien($dieu_kien, $gia_tri, $phuong_thuc_so_sanh = '='){
         $string_sql = "SELECT s.*, ten_tac_gia 
         FROM bs_sach s JOIN bs_tac_gia tg ON s.id_tac_gia = tg.id 
-            WHERE $dieu_kien $phuong_thuc_so_sanh".$gia_tri;
-            // echo $string_sql;
-             $this->setSQL($string_sql);
-             $this->execute();
-             $result = $this->loadAllRow();
-             return $result;
+                WHERE $dieu_kien $phuong_thuc_so_sanh " . $gia_tri;
+        //echo $string_sql; exit;
+        $this->setSQL($string_sql);
+        $this->execute();
+        $result = $this->loadAllRow();
+        return $result;
     }
 
     function ds_sach_noi_bat(){
@@ -62,11 +62,23 @@ class xl_sach extends database{
         $result = $this->loadRow();
         return $result;
     }
-
-    function lay_tin_tuc_sach($id_tin){
+    
+    function lay_tin_tuc(){
+        $so_sach_tren_trang = 8;
         $string_sql ="SELECT *
                     FROM bs_tin_tuc 
-                    WHERE id = " . $id_tin;
+                    WHERE id_loai_tin_tuc = 1 " ;
+                   
+                     $this->setSQL($string_sql);
+                     $this->execute();
+                     $result = $this->loadAllRow();
+                     return $result;
+    }
+    function lay_tin_chi_tiet($id_tin){
+        $so_sach_tren_trang = 8;
+        $string_sql ="SELECT *
+                    FROM bs_tin_tuc 
+                    WHERE id = " . $id_tin ;
                    
                      $this->setSQL($string_sql);
                      $this->execute();
@@ -75,4 +87,5 @@ class xl_sach extends database{
     }
 
 }
+
 ?>

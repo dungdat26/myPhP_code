@@ -27,7 +27,7 @@ if(isset($_GET['page'])){
         }
     }
     else{
-        header('location: /myPhP_code/buoi9/admin/?page=dashboard');
+        header('location: /myPhP_code/buoi9/admin/');
     }
 }
 else {
