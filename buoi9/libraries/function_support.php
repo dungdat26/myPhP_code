@@ -2,29 +2,29 @@
 function in_ds_sach_theo_data_truyen_vao($ds_sach_can_in){
     foreach($ds_sach_can_in as $key =>  $item_sach){
         ?>
-        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 item_sach">
-            <div class="">
-                <div class="hinh_sach">
-                  <a href="/myPhP_code/buoi9/?page=chi_tiet_sach&id_sach=<?php echo $item_sach->id ?>">
-                  <img src="./images/sach/<?php echo $item_sach->hinh; ?>" alt="">
+       <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 item_sach">
+            <a href=" /myPhP_code/buoi9/?page=chi_tiet_sach&id_sach=<?php echo $item_sach->id; ?>">
+                <div class="">
+                    <div class="hinh_sach">
+                        <img src="./images/sach/<?php echo $item_sach->hinh; ?>" alt="">
+                    </div>
+                    <div class="ten_sach">
+                    <?php echo $item_sach->ten_sach; ?>
+                    </div>
+                    <div class="tac_gia">
+                    <?php echo $item_sach->ten_tac_gia; ?>
+                    </div>
+                    <div class="don_gia">
+                    <?php echo $item_sach->don_gia; ?>
+                    </div>
+                    <div class="button_mua_ngay">
+                        <a href="<?php echo $item_sach->id;?>">
+                            <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                            Mua ngay
+                        </a>
+                    </div>
                 </div>
-                <div class="ten_sach">
-                <?php echo $item_sach->ten_sach; ?>
-                </div>
-                <div class="tac_gia">
-                <?php echo $item_sach->ten_tac_gia; ?>
-                </div>
-                <div class="don_gia">
-                <?php echo $item_sach->don_gia; ?>
-                </div>
-                <div class="button_mua_ngay">
-                    <a href="<?php echo $item_sach->id;?>">
-                        <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
-                        Mua ngay
-                    </a>
-                  </a>
-                </div>
-            </div>
+            </a>
         </div>
         <?php
     }
@@ -131,8 +131,70 @@ function print_chuoi_html_gio_hang(){
     return $chuoi_mail_html;
 }
 
+function print_chi_tiet_don_hang($ds_chi_tiet_don_hang){
+
+    if(count($ds_chi_tiet_don_hang)){
+        ?>
+        <table class="table table-striped table-hover table_gio_hang">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>Tên sách</th>
+                    <th>hình</th>
+                    <th>số lượng</th>
+                    <th>đơn giá</th>
+                    <th>thành tiền</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                foreach($ds_chi_tiet_don_hang as $item_gio_hang){
+                    ?>
+                    <tr>
+                        <td><?php echo $item_gio_hang->id; ?></td>
+                        <td><?php echo $item_gio_hang->ten_sach; ?></td>
+                        <td>
+                            <img src="/test_php/do_an_nho_nho/public/images/sach/<?php echo $item_gio_hang->hinh; ?>" alt="">
+                        </td>
+                        <td>
+                            <input type="number" name="so_luong_cap_nhat[<?php echo $item_gio_hang->id; ?>]" 
+                                value="<?php echo $item_gio_hang->so_luong; ?>" 
+                                id="so_luong_<?php echo $item_gio_hang->id; ?>" class="form-control" 
+                                min="1" step="1" title="">
+                        </td>
+                        <td><?php echo $item_gio_hang->don_gia; ?></td>
+                        <td><?php echo $item_gio_hang->so_luong * $item_gio_hang->don_gia; ?></td>
+                    </tr>
+                    <?php
+                }
+                ?>
+            </tbody>
+            
+        </table>
+        <?php
+    }
+}
 
 function create_url_review_don_hang($id_don_hang){
     return 'http://localhost:/myPhP_code/buoi9/?page=don_hang&id_don_hang=' . $id_don_hang;
+}
+
+function check_and_include_model_data_base(){
+
+    if(file_exists('./model/database.php')){
+        include_once('./model/database.php');
+    }
+    else{
+        include_once('../model/database.php');
+    }
+}
+
+function check_and_include_model_database(){
+    if(file_exists('./model/database.php')){
+        include_once('./model/database.php');
+    }
+    else{
+        include_once('../model/database.php');
+    }
 }
 ?>

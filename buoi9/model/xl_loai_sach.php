@@ -1,5 +1,5 @@
 <?php 
-include_once('./model/database.php');
+check_and_include_model_database();
 
 class xl_loai_sach extends database{
 
@@ -17,6 +17,14 @@ class xl_loai_sach extends database{
         $result = $this->loadAllRow();
         return $result;
         
+    }
+    function ds_tat_ca_loai_sach_theo_cha(){
+
+        $ds_loai_cha = $this->ds_loai_sach_theo_id_cha();
+
+        $this->de_quy_lay_toan_bo_con($ds_loai_cha);
+
+        return $ds_loai_cha;
     }
     function ds_tin_theo_id_cha($id_loai_cha = 0){
 

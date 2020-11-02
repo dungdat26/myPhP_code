@@ -15,7 +15,7 @@
         $active = ($key == 0)?'active':'';
         ?>
         <div class="item <?php echo $active; ?>">
-            <img alt="First slide" src="./public/images/slide_banner/<?php echo $slide_banner->hinh ?>">
+            <img alt="First slide" src="./images/slide_banner/<?php echo $slide_banner->hinh ?>">
         </div>
         <?php
     }
