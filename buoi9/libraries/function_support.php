@@ -29,6 +29,9 @@ function in_ds_sach_theo_data_truyen_vao($ds_sach_can_in){
         <?php
     }
 }
+
+
+
 function import_file($url_file){
     if(file_exists($url_file . '.php')){
         include_once($url_file . '.php');
@@ -179,15 +182,6 @@ function create_url_review_don_hang($id_don_hang){
     return 'http://localhost:/myPhP_code/buoi9/?page=don_hang&id_don_hang=' . $id_don_hang;
 }
 
-function check_and_include_model_data_base(){
-
-    if(file_exists('./model/database.php')){
-        include_once('./model/database.php');
-    }
-    else{
-        include_once('../model/database.php');
-    }
-}
 
 function check_and_include_model_database(){
     if(file_exists('./model/database.php')){

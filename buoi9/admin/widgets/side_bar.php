@@ -15,5 +15,10 @@ $loai_trang = $_GET['page'];
                 Quản lý sách
             </div>
         </a>
+        <a href="/myPhP_code/buoi9/admin/?page=tac_gia">
+            <div class="item_menu <?php if($loai_trang == 'tac_gia' || $loai_trang == 'them_tac_gia' || $loai_trang == 'cap-nhat-sach') echo 'active'; ?>">
+                Quản lý Tác Giả
+            </div>
+        </a>
     </div>
 </div>

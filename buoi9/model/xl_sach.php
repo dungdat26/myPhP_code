@@ -83,6 +83,28 @@ class xl_sach extends database{
         return $result;
     }
 
+    function lay_tin_tuc(){
+        $so_sach_tren_trang = 8;
+        $string_sql ="SELECT *
+                    FROM bs_tin_tuc 
+                    WHERE id_loai_tin_tuc = 1 " ;
+                   
+                     $this->setSQL($string_sql);
+                     $this->execute();
+                     $result = $this->loadAllRow();
+                     return $result;
+    }
+    function lay_tin_chi_tiet($id_tin){
+        $so_sach_tren_trang = 8;
+        $string_sql ="SELECT *
+                    FROM bs_tin_tuc 
+                    WHERE id = " . $id_tin ;
+                   
+                     $this->setSQL($string_sql);
+                     $this->execute();
+                     $result = $this->loadRow();
+                     return $result;
+    }
 
     function them_sach($ten_sach, $id_tac_gia, $gioi_thieu, $doc_thu, $id_loai_sach, $id_nha_xuat_ban, $so_trang, $ngay_xuat_ban, $kich_thuoc, $sku, $trong_luong, $trang_thai, $hinh, $don_gia, $gia_bia, $noi_bat){
         $string_sql = "INSERT INTO bs_sach (ten_sach, id_tac_gia, gioi_thieu, doc_thu, id_loai_sach, id_nha_xuat_ban, so_trang, ngay_xuat_ban, kich_thuoc, sku, trong_luong, trang_thai, hinh, don_gia, gia_bia, noi_bat) 
@@ -94,6 +116,19 @@ class xl_sach extends database{
         return $last_insert_id;
         
     }
+
+    function them_tac_gia($ten_tac_gia,$ngay_sinh,$gioi_thieu){
+        $string_sql = "INSERT INTO bs_tac_gia (ten_tac_gia, ngay_sinh, gioi_thieu)
+         VALUES ( '$ten_tac_gia', '$ngay_sinh', '$gioi_thieu');";
+        //echo $string_sql;exit;
+        $this->setSQL($string_sql);
+        $this->execute();
+        $last_insert_id = $this->lasInsertId();
+        return $last_insert_id;
+        
+    }
+
+    
 
 }
 ?>
