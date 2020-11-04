@@ -117,16 +117,7 @@ class xl_sach extends database{
         
     }
 
-    function them_tac_gia($ten_tac_gia,$ngay_sinh,$gioi_thieu){
-        $string_sql = "INSERT INTO bs_tac_gia (ten_tac_gia, ngay_sinh, gioi_thieu)
-         VALUES ( '$ten_tac_gia', '$ngay_sinh', '$gioi_thieu');";
-        //echo $string_sql;exit;
-        $this->setSQL($string_sql);
-        $this->execute();
-        $last_insert_id = $this->lasInsertId();
-        return $last_insert_id;
-        
-    }
+   
 
     
 

@@ -8,7 +8,7 @@ class xl_tac_gia extends database{
     }
 
     function so_luong_tac_gia(){
-        $string_sql = "SELECT count(*) as so_sach FROM bs_tac_gia";
+        $string_sql = "SELECT count(*) as so_tac_gia FROM bs_tac_gia";
         //echo $string_sql; exit;
         $this->setSQL($string_sql);
         $this->execute();

@@ -1,22 +1,22 @@
 <?php
-include_once('../model/xl_tac_gia.php');
+include_once('../model/xl_nha_xuat_ban.php');
 
-$xl_tac_gia = new xl_tac_gia();
+$xl_nha_xuat_ban = new xl_nha_xuat_ban();
 
-$so_tac_gia_tren_trang = 16;
+$so_nha_xuat_ban_tren_trang = 10;
 
 $trang_hien_tai = (isset($_GET['trang']))?$_GET['trang']:0;
 
 //lay danh sach theo trang
 
-$ds_sach_hien_thi = $xl_tac_gia->ds_tac_gia_phan_trang($trang_hien_tai, $so_tac_gia_tren_trang);
+$ds_sach_hien_thi = $xl_nha_xuat_ban->ds_nha_xuat_ban_phan_trang($trang_hien_tai, $so_nha_xuat_ban_tren_trang);
 
 //echo '<pre>',print_r($ds_sach_hien_thi),'</pre>';
 
-$so_luong_tac_gia = ($xl_tac_gia->so_luong_tac_gia())->so_tac_gia;
+$so_luong_nha_xuat_ban = ($xl_nha_xuat_ban->so_luong_nha_xuat_ban())->so_nha_xuat_ban;
 //echo '<pre>',print_r($$so_luong_tac_gia),'</pre>';
-echo $so_luong_tac_gia;
-$so_trang = ceil($so_luong_tac_gia/$so_tac_gia_tren_trang);
+echo $so_luong_nha_xuat_ban;
+$so_trang = ceil($so_luong_nha_xuat_ban/$so_nha_xuat_ban_tren_trang);
 ?>
     <script type="text/javascript" src="./js/simple_pagination.js"></script>
     <link rel="stylesheet" href="./css/simple_pagination.css">
@@ -74,8 +74,8 @@ $so_trang = ceil($so_luong_tac_gia/$so_tac_gia_tren_trang);
 
     <div class="include_button">
 
-        <a href="/myPhP_code/buoi9/admin/?page=them_tac_gia">
-            <button type="button" class="btn btn-info">Thêm Tác Giả Mới</button>
+        <a href="/myPhP_code/buoi9/admin/?page=them_nha_xuat_ban">
+            <button type="button" class="btn btn-info">Thêm Nhà Xuất Bản Mới</button>
         </a>
         
     </div>
@@ -85,9 +85,10 @@ $so_trang = ceil($so_luong_tac_gia/$so_tac_gia_tren_trang);
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Tên Tác Giả</th>
-                <th>Ngày Sinh</th>
-                <th>Giới Thiệu</th>
+                <th>Tên Nhà Xuất Bản</th>
+                <th>Địa Chỉ</th>
+                <th>Điện Thoại</th>
+                <th>Email</th>
             </tr>
         </thead>
         <tbody id="data_show">
@@ -108,14 +109,10 @@ $so_trang = ceil($so_luong_tac_gia/$so_tac_gia_tren_trang);
             string_html += `
             <tr>
                 <td>${data_list[i].id}</td>
-                <td>
-                    
-                    ${data_list[i].ten_tac_gia}
-                    </a>
-                </td>
-                <td>${data_list[i].ngay_sinh}</td>
-                <td>${data_list[i].gioi_thieu}</td>
-                
+                <td>${data_list[i].ten_nha_xuat_ban}</td>
+                <td>${data_list[i].dia_chi}</td>
+                <td>${data_list[i].dien_thoai}</td>
+                <td>${data_list[i].email}</td>
             </tr>
             `
         }
@@ -126,8 +123,8 @@ $so_trang = ceil($so_luong_tac_gia/$so_tac_gia_tren_trang);
     }
 
 
-    function get_ds_tac_gia_theo_trang(pageNumber){
-        $.get('http://localhost:/myPhP_code/buoi9/admin/api_tac_gia.php?trang=' + (pageNumber - 1))
+    function get_ds_nha_xuat_ban_theo_trang(pageNumber){
+        $.get('http://localhost:/myPhP_code/buoi9/admin/api_nha_xuat_ban.php?trang=' + (pageNumber - 1))
             .done((data) => {
                 console.log(JSON.parse(data));
 
@@ -140,8 +137,8 @@ $so_trang = ceil($so_luong_tac_gia/$so_tac_gia_tren_trang);
 
     $(function() {
         $('#pagination').pagination({
-            items: <?php echo $so_luong_tac_gia; ?>,
-            itemsOnPage: 16,
+            items: <?php echo $so_luong_nha_xuat_ban; ?>,
+            itemsOnPage: 10,
             cssStyle: 'light-theme',
             onPageClick: function(pageNumber) {
                 console.log(pageNumber - 1);
@@ -154,12 +151,12 @@ $so_trang = ceil($so_luong_tac_gia/$so_tac_gia_tren_trang);
                 //     // ... and then only show the appropriate rows.
                 //     .slice(showFrom, showTo).show();
 
-                get_ds_tac_gia_theo_trang(pageNumber);
+                get_ds_nha_xuat_ban_theo_trang(pageNumber);
 
             }
         });
 
-        get_ds_tac_gia_theo_trang(1);
+        get_ds_nha_xuat_ban_theo_trang(1);
     });
     </script>
 </div>

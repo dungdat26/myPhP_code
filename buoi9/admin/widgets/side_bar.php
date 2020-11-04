@@ -20,5 +20,10 @@ $loai_trang = $_GET['page'];
                 Quản lý Tác Giả
             </div>
         </a>
+        <a href="/myPhP_code/buoi9/admin/?page=nha_xuat_ban">
+            <div class="item_menu <?php if($loai_trang == 'nha_xuat_ban' || $loai_trang == 'them_nha_xuat_ban' || $loai_trang == 'cap-nhat-sach') echo 'active'; ?>">
+                Quản lý Nhà Xuất Bản
+            </div>
+        </a>
     </div>
 </div>
