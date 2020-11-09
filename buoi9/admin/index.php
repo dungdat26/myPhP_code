@@ -45,6 +45,12 @@ if(isset($_GET['page'])){
         else if($_GET['page'] == 'cap-nhat-sach'){
             include_once('./pages/cap_nhat_sach.php');
         }
+        else if($_GET['page'] == 'cap-nhat-tac-gia'){
+            include_once('./pages/cap_nhat_tac_gia.php');
+        }
+        else if($_GET['page'] == 'cap-nhat-nha-xuat-ban'){
+            include_once('./pages/cap_nhat_nha_xuat_ban.php');
+        }
         else if($_GET['page'] == 'dashboard'){
             include_once('./pages/dashboard.php');
         }

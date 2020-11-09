@@ -3,6 +3,24 @@ include_once('../model/xl_nha_xuat_ban.php');
 
 $xl_nha_xuat_ban = new xl_nha_xuat_ban();
 
+if(isset($_GET['id_xoa'])){
+    $id_xoa = $_GET['id_xoa'];
+    echo $id_xoa;
+
+    if($id_xoa){
+        $result= $xl_nha_xuat_ban->xoa_nha_xuat_ban($id_xoa);
+        if($result){
+            ?>
+            <script>
+                alert("xoá sách thành công !!");
+                window.location.href = '/myPhP_code/buoi9/admin/?page=nha_xuat_ban';
+            </script>
+            <?php
+        }
+    }
+
+}
+
 $so_nha_xuat_ban_tren_trang = 10;
 
 $trang_hien_tai = (isset($_GET['trang']))?$_GET['trang']:0;
@@ -20,6 +38,7 @@ $so_trang = ceil($so_luong_nha_xuat_ban/$so_nha_xuat_ban_tren_trang);
 ?>
     <script type="text/javascript" src="./js/simple_pagination.js"></script>
     <link rel="stylesheet" href="./css/simple_pagination.css">
+    <script type="text/javascript" src="./js/function_support.js"></script>
     
     <div class="title_page">
         Danh Sách Sách
@@ -108,11 +127,19 @@ $so_trang = ceil($so_luong_nha_xuat_ban/$so_nha_xuat_ban_tren_trang);
         for(var i = 0; i < data_list.length; i++){
             string_html += `
             <tr>
-                <td>${data_list[i].id}</td>
-                <td>${data_list[i].ten_nha_xuat_ban}</td>
+                <td> ${data_list[i].id} </td>
+                <td> <a href="/myPhP_code/buoi9/admin/?page=cap-nhat-nha-xuat-ban&id_nha_xuat_ban=${data_list[i].id}">
+                    ${data_list[i].ten_nha_xuat_ban}
+                    </a>
+                </td>
                 <td>${data_list[i].dia_chi}</td>
                 <td>${data_list[i].dien_thoai}</td>
                 <td>${data_list[i].email}</td>
+                <td>
+                    <a href="/myPhP_code/buoi9/admin/?page=nha_xuat_ban&id_xoa=${data_list[i].id}" type="button" class="btn btn-danger" onclick="return recheck_delete();">
+                   <span class="glyphicon glyphicon-trash" aria-hidden="true"> Xoá</span>
+                    </a>
+                </td>
             </tr>
             `
         }

@@ -22,6 +22,7 @@
                 <tr>
                     <th></th>
                     <th></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody id="data_show">
@@ -34,12 +35,15 @@
                         <img src="./images/tin_tuc/<?php echo $item_tin_tuc->hinh_dai_dien; ?>" alt="" style="width: 150px;">
                     
                 </td>
+                
                 <td>
                     <div class="tieu_de_tin">
                         <a href="/myPhP_code/buoi9/?page=tin_chi_tiet&id_tin=<?php echo $item_tin_tuc->id ?> ">
                     <?php echo $item_tin_tuc->tieu_de_tin; ?>
                     </a></div></br>
-                     <?php echo $item_tin_tuc->noi_dung_tom_tat; ?></td>
+                     <?php echo $item_tin_tuc->noi_dung_tom_tat; ?>
+                </td>
+                
             </tr>
             <?php
                 }

@@ -2,6 +2,23 @@
 include_once('../model/xl_tac_gia.php');
 
 $xl_tac_gia = new xl_tac_gia();
+if(isset($_GET['id_xoa'])){
+    $id_xoa = $_GET['id_xoa'];
+    echo $id_xoa;
+
+    if($id_xoa){
+        $result= $xl_tac_gia->xoa_tac_gia($id_xoa);
+        if($result){
+            ?>
+            <script>
+                alert("xoá sách thành công !!");
+                window.location.href = '/myPhP_code/buoi9/admin/?page=tac_gia';
+            </script>
+            <?php
+        }
+    }
+
+}
 
 $so_tac_gia_tren_trang = 16;
 
@@ -20,6 +37,7 @@ $so_trang = ceil($so_luong_tac_gia/$so_tac_gia_tren_trang);
 ?>
     <script type="text/javascript" src="./js/simple_pagination.js"></script>
     <link rel="stylesheet" href="./css/simple_pagination.css">
+    <script type="text/javascript" src="./js/function_support.js"></script>
     
     <div class="title_page">
         Danh Sách Sách
@@ -109,13 +127,17 @@ $so_trang = ceil($so_luong_tac_gia/$so_tac_gia_tren_trang);
             <tr>
                 <td>${data_list[i].id}</td>
                 <td>
-                    
+                    <a href="/myPhP_code/buoi9/admin/?page=cap-nhat-tac-gia&id_tac_gia=${data_list[i].id}">
                     ${data_list[i].ten_tac_gia}
                     </a>
                 </td>
                 <td>${data_list[i].ngay_sinh}</td>
                 <td>${data_list[i].gioi_thieu}</td>
-                
+                <td>
+                    <a href="/myPhP_code/buoi9/admin/?page=tac_gia&id_xoa=${data_list[i].id}" type="button" class="btn btn-danger" onclick="return recheck_delete();">
+                   <span class="glyphicon glyphicon-trash" aria-hidden="true"> Xoá</span>
+                    </a>
+                </td>
             </tr>
             `
         }
