@@ -1,0 +1,37 @@
+GET http://localhost/myPhP_code/buoi9/api/nha_xuat_ban/index_nha_xuat_ban.php
+Content-Type: application/json
+
+####
+
+POST http://localhost/myPhP_code/buoi9/api/nha_xuat_ban/index_nha_xuat_ban.php
+Content-Type: application/json
+
+{
+    "ten_nha_xuat_ban":"test 123",
+    "dia_chi":"asdasdsa",
+    "dien_thoai":"232331232",
+    "email":"sdasdsa@.com"
+}
+
+
+####
+
+PUT http://localhost/myPhP_code/buoi9/api/nha_xuat_ban/index_nha_xuat_ban.php
+Content-Type: application/json
+
+{
+     "ten_nha_xuat_ban":"test ",
+    "dia_chi":"asdasdsa",
+    "dien_thoai":"232331232",
+    "email":"sdasdsa@.com",
+    "id_cap_nhat": 19
+}
+
+####
+
+DELETE  http://localhost/myPhP_code/buoi9/api/nha_xuat_ban/index_nha_xuat_ban.php
+Content-Type: application/json
+
+{
+    "id_xoa": 19
+}

@@ -60,6 +60,16 @@ class xl_tac_gia extends database{
         
     }
 
+    function lay_toan_bo_tac_gia(){
+        $string_sql = "SELECT * 
+                     FROM bs_tac_gia ";
+        //echo $string_sql; exit;
+        $this->setSQL($string_sql);
+        $this->execute();
+        $result = $this->loadAllRow();
+        return $result;
+    }
+
     function xoa_tac_gia($id_xoa){
         $string_sql= "DELETE FROM bs_tac_gia WHERE id = " . $id_xoa;
         //echo $string_sql; exit; 

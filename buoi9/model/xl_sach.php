@@ -16,6 +16,16 @@ class xl_sach extends database{
         return $result;
     }
 
+    function lay_toan_bo_sach(){
+        $string_sql = "SELECT s.*, ten_tac_gia 
+        FROM bs_sach s JOIN bs_tac_gia tg ON s.id_tac_gia = tg.id";
+        //echo $string_sql; exit;
+        $this->setSQL($string_sql);
+        $this->execute();
+        $result = $this->loadAllRow();
+        return $result;
+    }
+
     function ds_sach_theo_dieu_kien($dieu_kien, $gia_tri, $phuong_thuc_so_sanh = '='){
         $string_sql = "SELECT s.*, ten_tac_gia 
         FROM bs_sach s JOIN bs_tac_gia tg ON s.id_tac_gia = tg.id 
@@ -94,6 +104,7 @@ class xl_sach extends database{
                      $result = $this->loadAllRow();
                      return $result;
     }
+
     function lay_tin_chi_tiet($id_tin){
         $so_sach_tren_trang = 8;
         $string_sql ="SELECT *
@@ -127,32 +138,34 @@ class xl_sach extends database{
 
    }
 
-   function cap_nhat_sach($mang_thong_tin, $id_sach){
-       $string_build_query = '';
+    function cap_nhat_sach($mang_thong_tin, $id_sach){
+        $string_build_query = '';
 
-       $bien_dem= 0 ;
-       foreach($mang_thong_tin as $input_name => $item_input){
-           if($input_name != 'btn_save_cap_nhat_sach'){
-               if($bien_dem == 0){
-                   $string_build_query .= $input_name . " = '" . $item_input . "' ";
-               }
-               else{
-                   $string_build_query .=',' . $input_name . " = '" . $item_input . "' ";
-               }
-               $bien_dem++;
-           }
-       }
+        $bien_dem = 0;
+        foreach($mang_thong_tin as $input_name => $item_input){
+            if($input_name != 'btn_save_cap_nhat_sach'){
+                if($bien_dem == 0){
+                    $string_build_query .= $input_name . " = '" . $item_input . "' ";
+                }
+                else{
+                    $string_build_query .= ',' . $input_name . " = '" . $item_input . "' ";
+                }
+                $bien_dem++;
+            }
+        }
 
-       $string_sql= "UPDATE bs_sach
+        //echo $string_build_query;
+
+        $string_sql = "UPDATE bs_sach
             SET " . $string_build_query . "
-            WHERE id= $id_sach 
+            WHERE id = $id_sach
             ";
-            echo $string_sql;exit;
-            $this->setSQL($string_sql);
-            $result = $this->execute();
-            return $result;
-            
-   }
+        //echo $string_sql;exit;
+        $this->setSQL($string_sql);
+        $result = $this->execute();
+        return $result;
+    
+    }
 
 }
 ?>
