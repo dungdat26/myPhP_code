@@ -35,3 +35,13 @@ Content-Type: application/json
 {
     "id_xoa": 19
 }
+
+####
+
+POST http://localhost/myPhP_code/buoi9/api/author/index.php
+Content-Type: application/json
+
+{
+    "tai_khoan":"admin",
+    "mat_khau":"123456"
+}
