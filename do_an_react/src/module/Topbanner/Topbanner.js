@@ -9,8 +9,9 @@ class Topbanner extends Component {
       title_logo: this.props.title_page + ' test xem sao',
       count: 1,
       interval: null,
-
     };
+    this.handleChangeInput = this.handleChangeInput.bind(this);
+    this.handleSearchfunction = this.handleSearchfunction.bind(this);
   }
   updateCount(){
     this.setState({
@@ -27,19 +28,28 @@ class Topbanner extends Component {
   }
 
   componentDidUpdate(){
-    console.log("đang didupdate");
-    if(this.state.count == 5){
-      this.props.delete_me();
-    }
+    // console.log("đang didupdate");
+    // if(this.state.count == 5){
+    //   this.props.delete_me();
+    // }
   }
+
 
   componentWillUnmount(){
     console.log('đang bắt đầu cho component remove');
     clearInterval(this.state.interval);
   }
+handleChangeInput = (e) =>{
+  this.setState({
+    search: e.target.value
+  })
+}
+handleSearchfunction = () => {
+  console.log(this.state.search);
+}
 
 	render() {
-    console.log(this.state.count);
+    //console.log(this.state.count);
 		return (
 			<div className="top-banner" >
         <div className="header">
@@ -54,8 +64,8 @@ class Topbanner extends Component {
               </div>
               <div className="search">
                 <form>
-                  <input type="button" className="button_submit"  />
-                  <input type="text" defaultValue="" placeholder="Search..." />
+                  <input type="button" className="button_submit" onClick={this.handleSearchfunction} />
+                  <input type="text" Value={this.state.search} onChange={this.handleChangeInput} defaultValue="" placeholder="Search..." />
                 </form>
               </div>
               <div className="clearfix"></div>

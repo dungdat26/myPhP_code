@@ -1,5 +1,7 @@
 
 import './App.css';
+
+
 import ReactDOM from 'react-dom';
 import Topbanner from './module/Topbanner/Topbanner';
 import Slider from './module/Slider/Slider';
@@ -9,6 +11,8 @@ import Poster from './module/Poster/Poster';
 import Xbox from './module/Xbox/Xbox';
 import Footer from './module/Footer/Footer';
 import { useState } from 'react';
+import Contact from './module/Contact/Contact';
+import SignUp from './module/Signup/SignUp';
 
 function App() {
     let abc ="chào các bạn";
@@ -30,7 +34,11 @@ function App() {
 	  <Lastest/>
 	  <Poster/>
     <Xbox />
+    <SignUp />
+    
+    <Contact />
     <Footer />
+  
    </>
   );
 }

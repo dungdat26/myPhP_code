@@ -1,18 +1,30 @@
 import React, { useState } from 'react';
+import FadeAnimation from 'react-fade-animation';
 
 const Xbox = () => {
     const [an_hien_hinh, setAnHienHinh] = useState(true);
 
     const handleClick = (e) => {
-       console.log('đã click vào ReadMore Xbox Component');
-       console.log(e);
+        if (an_hien_hinh == 1) {
+        
+          console.log('đã click vào ReadMore Xbox Component');
+        console.log(e);
+        
+        setAnHienHinh(false);
+        }
+      if (an_hien_hinh == 0) {
+        console.log(e);
+        
+        setAnHienHinh(true);
+      }
+      
+      
 
-       setAnHienHinh(false);
     }
   
     
         return (
-            <div className="x-box">
+        <div className="x-box">
         <div className="container">	
         <div className="x-box_sec">
           <div className="col-md-7 x-box-left">
@@ -24,10 +36,13 @@ const Xbox = () => {
             <a className="hvr-bounce-to-top" onClick={handleClick} >Read More</a>
           </div>
           {
-            (an_hien_hinh)?
+            
+          (an_hien_hinh  )?
+          <FadeAnimation duration={1.5}  startDistance={70} from={"bottom"}>
           <div className="col-md-5 x-box-right">
-            <img src="images/xbox.jpg" className="img-responsive" alt=""/>
+            <img src="images/xbox.jpg" className="img_responsive" alt=""/>
           </div>
+          </FadeAnimation>
           :
           null
           }
