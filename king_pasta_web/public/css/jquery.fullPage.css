@@ -16,7 +16,7 @@ html, body {
     position: relative;
 	
 	/* Touch detection for Windows 8 */
-	-ms-touch-action: none; 
+	touch-action: none; 
 }
 .section {
     position: relative;

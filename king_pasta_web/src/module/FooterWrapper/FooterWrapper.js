@@ -1,6 +1,25 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const FooterWrapper = () => {  
+class FooterWrapper extends Component {  
+        constructor(props){
+          super(props);
+          this.state = {
+              name: '',
+              mobilenumbers: '',
+              message: '',
+              
+          };
+          this.handleChangeInput = this.handleChangeInput.bind(this);
+      }
+      handleChangeInput = (e) =>{
+          console.log(e.target.value);
+          this.setState({
+              [e.target.name]: e.target.value
+            
+          })
+
+      }
+       render() {
         return (
             <div className="footerwrapper">
             <footer className="container">
@@ -39,17 +58,19 @@ const FooterWrapper = () => {
                 <h2>Send Feedback</h2>
                 <form>
                   <h6>Your Name:</h6>
-                  <input type="text" className="yourname" />
+                  <input type="text" name="name" Value={this.state.name} onChange={this.handleChangeInput} className="yourname" />
                   <h6>Mobile Number :</h6>
-                  <input type="text" className="mobilenumber" />
+                  <input type="text" name="mobilenumbers"  Value={this.state.mobilenumbers} onChange={this.handleChangeInput} className="mobilenumber" />
                   <h6>Message :</h6>
-                  <textarea defaultValue={""} />
-                  <button>SUBMIT </button>
+                  <textarea name="message" Value={this.state.message} onChange={this.handleChangeInput} className="messages" defaultValue={""} />
+                  <button type="submit">SUBMIT </button>
                 </form>
               </div> 
             </footer> 
       </div>
         );
     }
+  }
+
 
 export default FooterWrapper;
