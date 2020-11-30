@@ -38,7 +38,7 @@ const Xbox = () => {
           {
             
           (an_hien_hinh  )?
-          <FadeAnimation duration={1.5}  startDistance={70} from={"bottom"}>
+          <FadeAnimation duration={2.0}  startDistance={70} from={"bottom"}>
           <div className="col-md-5 x-box-right">
             <img src="images/xbox.jpg" className="img_responsive" alt=""/>
           </div>

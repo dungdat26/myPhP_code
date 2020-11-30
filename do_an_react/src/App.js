@@ -13,6 +13,9 @@ import Footer from './module/Footer/Footer';
 import { useState } from 'react';
 import Contact from './module/Contact/Contact';
 import SignUp from './module/Signup/SignUp';
+import Payment from './module/payment/Payment';
+
+
 
 function App() {
     let abc ="chào các bạn";
@@ -33,9 +36,9 @@ function App() {
     <Content />
 	  <Lastest/>
 	  <Poster/>
+    <Payment />
     <Xbox />
     <SignUp />
-    
     <Contact />
     <Footer />
   

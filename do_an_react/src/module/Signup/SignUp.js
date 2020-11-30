@@ -12,9 +12,9 @@ class SignUp extends Component {
                     Đăng ký 
                 </div>
 
-                    <div className="ban_do col-xs-12 col-md-6">
+                <div className="Content ">
                         <SignUpForm />
-                    </div>
+                </div>
 
 
                 </div>

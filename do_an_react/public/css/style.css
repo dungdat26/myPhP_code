@@ -20,7 +20,7 @@ html, body{
   padding: 60px 0;
 }
 .contact_form .background_form_map {
-  background: rgba(0,0,0,0.2);
+  background: rgba(0, 0, 0, 0.2);
   padding: 20px;
 }
 .contact_form .background_form_map .title_form {
@@ -28,20 +28,58 @@ html, body{
   font-size: 30px;
 }
 .contact_form input::placeholder, .contact_form textarea::placeholder {
-  color: #555!important;
+  color: rgb(0, 0, 0)!important;
 }
 .Signup_form {
   background: url('../images/signupbg.png') no-repeat center center #ccc;
   background-size: cover;
   padding: 60px 0;
 }
-.Signup_form .background_form_map .title_form {
-  color: rgb(245, 244, 244);
-  font-size: 30px;
+.Signup_form .background_form_map {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 100px;
+  width: 600px;
 }
-.Signup_form input::placeholder, .contact_form textarea::placeholder {
+
+.Signup_form .background_form_map .title_form {
+  color: rgb(228, 228, 228);
+  font-size: 30px;
+
+}
+.Signup_form input, .Signup_form input{
+  width: 400px;
+}
+.Signup_form input::placeholder, .Signup_form textarea::placeholder {
   color: #555!important;
 }
+.top-banner .title{
+  color: #000;
+}
+.top-banner input, .top-banner input{
+  
+  height: 30px;
+}
+.top-banner .headr-right{
+  padding: 5px;
+  width: 350px;
+}
+.top-banner .headr-right .details .LoginForm .error{
+ color: #f43c60;
+}
+.top-banner input::placeholder, .top-banner textarea::placeholder {
+  color: #555!important;
+}
+
+.Payment_form {
+  background: url('../images/paymentbackground.jpg') no-repeat center center #ccc;
+  background-size: cover;
+  padding: 60px 0;
+}
+.Payment_form .background_form_map {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 10px;
+}
+
 
 
 @font-face {
