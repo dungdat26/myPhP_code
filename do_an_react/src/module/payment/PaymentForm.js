@@ -152,6 +152,7 @@ class PaymentForm extends Component {
             <div className="col-sm-6 ">
                 
             <div className="form-group">
+            <div className="title_form">Card Holder Name</div>
                 <div className = "col-sm-6 ">
                     <input type="text" name ="cardholderName" Value={this.state.cardholderName} onChange={this.handleChangeInput} className="form-control" id="" placeholder="email" />
                 </div>
@@ -164,14 +165,27 @@ class PaymentForm extends Component {
                 
                     </div>
                     <div className = " col-sm-7  ">
-                        <select multiple className="custom-select" name="" id="">
-                            <option defaultValue>Select Card</option>
-                            <option value="">Visa</option>
-                            <option value="">Master Card</option>
-                            <option value=""></option>
-                        </select></div>
-                
-                </div>
+                        
+                    
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="1" id="input" value="" />
+                            American Express
+                        </label>
+                        <label>
+                            <input type="radio" name="1" id="input" value="" />
+                            Visa
+                        </label>
+                        <label>
+                            <input type="radio" name="1" id="input" value="" />
+                            Master Card
+                        </label>
+                    </div>
+                    
+
+
+                    </div>
+                 </div>
             </div>
            
         

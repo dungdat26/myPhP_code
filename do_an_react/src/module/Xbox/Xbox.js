@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import FadeAnimation from 'react-fade-animation';
+import FadeIn from 'react-fade-in';
+import {CSSTransition} from"react-transition-group"
 
 const Xbox = () => {
     const [an_hien_hinh, setAnHienHinh] = useState(true);
@@ -12,9 +14,9 @@ const Xbox = () => {
         
         setAnHienHinh(false);
         }
-      if (an_hien_hinh == 0) {
+      if (an_hien_hinh == 0 ) {
         console.log(e);
-        
+        console.log('đã biện');
         setAnHienHinh(true);
       }
       
@@ -24,6 +26,7 @@ const Xbox = () => {
   
     
         return (
+        
         <div className="x-box">
         <div className="container">	
         <div className="x-box_sec">
@@ -37,15 +40,25 @@ const Xbox = () => {
           </div>
           {
             
-          (an_hien_hinh  )?
-          <FadeAnimation duration={2.0}  startDistance={70} from={"bottom"}>
-          <div className="col-md-5 x-box-right">
-            <img src="images/xbox.jpg" className="img_responsive" alt=""/>
-          </div>
-          </FadeAnimation>
-          :
-          null
-          }
+            (an_hien_hinh==1  )?
+            
+            <div className="col-md-5 x-box-right">
+              {/* <div className="w3-animate-fading"> */}
+              <FadeAnimation duration={2.0}  startDistance={70} from={"bottom"}>
+              <img src="images/xbox.jpg" className="img_responsive" alt=""/>
+              </FadeAnimation>
+              </div>
+
+            // </div>
+            :
+            <div className="col-md-5 x-box-right">
+             <FadeAnimation duration={2.0}  startDistance={70} from={"bottom"}>
+              <img src="images/xbox.jpg" className="img_responsive" alt=""/>
+
+              </FadeAnimation>
+              </div>
+            }
+          
           <div className="clearfix"></div>
         </div>
       </div>

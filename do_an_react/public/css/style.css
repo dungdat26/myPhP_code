@@ -74,6 +74,7 @@ html, body{
   background: url('../images/paymentbackground.jpg') no-repeat center center #ccc;
   background-size: cover;
   padding: 60px 0;
+  color: #ffffff;
 }
 .Payment_form .background_form_map {
   background: rgba(0, 0, 0, 0.2);
@@ -82,6 +83,34 @@ html, body{
 
 
 
+
+
+
+.fade-appear{
+  opacity: 0;
+  z-index: 1;
+}
+.fade-appear.fade-appear-active{
+  opacity: 1;
+  transition: opacity 300ms linear;
+}
+.fade-exit{
+  opacity: 1;
+}
+.fade-exit.fade-exit-active{
+  opacity: 0;
+  transition: opacity 300ms linear;
+}
+.fade-exit-done{
+  opacity: 0;
+}
+.fade-enter{
+  opacity: 0;
+}
+.fade-enter.fade-enter-active{
+ opacity: 1;
+ transition: opacity 300ms linear;
+}
 @font-face {
    font-family: 'OpenSans-Regular';
    src: url(../fonts/OpenSans-Regular.ttf)format('truetype');

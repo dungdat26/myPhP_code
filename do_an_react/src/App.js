@@ -1,7 +1,6 @@
 
 import './App.css';
 
-
 import ReactDOM from 'react-dom';
 import Topbanner from './module/Topbanner/Topbanner';
 import Slider from './module/Slider/Slider';
@@ -37,7 +36,7 @@ function App() {
 	  <Lastest/>
 	  <Poster/>
     <Payment />
-    <Xbox />
+    <Xbox  CSSTransition/>
     <SignUp />
     <Contact />
     <Footer />
