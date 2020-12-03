@@ -24,6 +24,10 @@ const Content = () => {
       'type': "Action Games",
       'title': "Nulla elementum nunc tempus.",
       'image': "images/t2.jpg"
+    },{
+      'type': "Adventure Games",
+      'title': "Nulla elementum nunc tempus.",
+      'image': "images/t5.jpg"
     },
   ])
     return (

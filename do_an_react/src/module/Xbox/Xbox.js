@@ -1,26 +1,13 @@
 import React, { useState } from 'react';
 import FadeAnimation from 'react-fade-animation';
-import FadeIn from 'react-fade-in';
 import {CSSTransition} from"react-transition-group"
+import $ from "jquery";
 
 const Xbox = () => {
-    const [an_hien_hinh, setAnHienHinh] = useState(true);
-
-    const handleClick = (e) => {
-        if (an_hien_hinh == 1) {
+   
+    const handleClick = () => {
         
-          console.log('đã click vào ReadMore Xbox Component');
-        console.log(e);
-        
-        setAnHienHinh(false);
-        }
-      if (an_hien_hinh == 0 ) {
-        console.log(e);
-        console.log('đã biện');
-        setAnHienHinh(true);
-      }
-      
-      
+          $("#xbox").fadeToggle(2000);
 
     }
   
@@ -38,26 +25,11 @@ const Xbox = () => {
             Aliquam nec dui dolor. Quisque scelerisque aliquet est et dignissim.</p>
             <a className="hvr-bounce-to-top" onClick={handleClick} >Read More</a>
           </div>
-          {
-            
-            (an_hien_hinh==1  )?
-            
-            <div className="col-md-5 x-box-right">
-              {/* <div className="w3-animate-fading"> */}
-              <FadeAnimation duration={2.0}  startDistance={70} from={"bottom"}>
+
+            <div className="col-md-5 x-box-right" id="xbox">
               <img src="images/xbox.jpg" className="img_responsive" alt=""/>
-              </FadeAnimation>
               </div>
 
-            // </div>
-            :
-            <div className="col-md-5 x-box-right">
-             <FadeAnimation duration={2.0}  startDistance={70} from={"bottom"}>
-              <img src="images/xbox.jpg" className="img_responsive" alt=""/>
-
-              </FadeAnimation>
-              </div>
-            }
           
           <div className="clearfix"></div>
         </div>
