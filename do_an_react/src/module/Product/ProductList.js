@@ -1,16 +1,17 @@
-import React from 'react' ;
+import React from 'react';
 import ProductItem from './ProductItem';
+import Carousel from 'react-elastic-carousel';
 
-const ProducList = (props) =>{
-    return(
-        <ul id="flexiselDemo1">
+const ProductList = (props) => {
+    return (
+        <Carousel>  
             {
-                props.list_item.map(item_info =>
-                <ProductItem item_info={item_info} />
+                props.list_item.map(item_info => 
+                <ProductItem  item_info={item_info} />
                 )
             }
-        </ul>
-    )
-}
+        </Carousel> 
+    );
+};
 
-export default ProducList;
+export default ProductList;

@@ -1,6 +1,10 @@
 import LogoBanner from './Logobanner';
 import React, { Component } from 'react';
 import $ from "jquery";
+import {Link,
+  withRouter,
+  } from 'react-router-dom' ;
+import ItemMenu from './ItemMenu';
 
 
 class Topbanner extends Component {
@@ -40,22 +44,23 @@ class Topbanner extends Component {
           link: '/'
         },
         {
-          title: 'About',
-          link: '/'
+          title: 'Detail',
+          link: '/chi-tiet'
         },
         {
-          title: 'Reviews',
-          link: '/'
+          title: 'Payment',
+          link: '/thanh-toan'
         },
         {
-          title: 'News',
-          link: '/'
+          title: 'Contact',
+          link: '/lien-he'
         },
         {
-          title: 'Gallery',
-          link: '/'
+          title: 'Sign Up',
+          link: '/dang-ky'
         },
       ]
+      
       
     };
     this.handleChangeSearchInput = this.handleChangeSearchInput.bind(this);
@@ -102,6 +107,7 @@ class Topbanner extends Component {
   }
 
 
+  
 
   componentWillUnmount(){
     // console.log('đang bắt đầu cho component remove');
@@ -256,7 +262,7 @@ handleSearchfunction = () => {
               <div className="search">
                 <form>
                   <input type="button" className="button_submit" onClick={this.handleSearchfunction} />
-                  <input type="text" Value={this.state.search} onChange={this.handleChangeSearchInput} defaultValue="" placeholder="Search..." />
+                  <input type="text" value={this.state.search} onChange={this.handleChangeSearchInput} defaultValue="" placeholder="Search..." />
                 </form>
               </div>
               <div className="clearfix"></div>
@@ -266,35 +272,35 @@ handleSearchfunction = () => {
             <div className="headr-right">
               <div className="details">
               
-            <div class="modal fade" id="modal-id">
+            <div className="modal fade" id="modal-id">
 
             <form  className="LoginForm" onSubmit={this.handleSubmit}>
               
               <div className="modal-dialog">
                 <div className="modal-content">
                   <div className="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <button type="button" className="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     <h4 className="modal-title">Login Form</h4>
                   </div>
                   <div className="modal-body">
                     <div>Tài khoản</div>
                       <div >
-                        <input type="text" name ="id" Value={this.state.id} onChange={this.handleChangeInput} className="form-control" id="" placeholder="ID " />
+                        <input type="text" name ="id" value={this.state.id} onChange={this.handleChangeInput} className="form-control" id="" placeholder="ID " />
                         <div className="error">
                                 {this.state.message_error.id}
                           </div>
                       </div>
                       <div>Mật khẩu </div>
                       <div>
-                        <input type="password" name ="mk" Value={this.state.mk} onChange={this.handleChangeInput} className="form-control" id="" placeholder="mật khẩu" />
+                        <input type="password" name ="mk" value={this.state.mk} onChange={this.handleChangeInput} className="form-control" id="" placeholder="mật khẩu" />
                         <div className="error">
                                 {this.state.message_error.mk}
                                 </div>
                       </div>
                   </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save changes</button>
+                  <div className="modal-footer">
+                    <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" className="btn btn-primary">Save changes</button>
                   </div>
                 </div>
               </div>
@@ -320,11 +326,11 @@ handleSearchfunction = () => {
                     //     class_active = 'active' ;
                     // }
                     // return <li className={class_active}><a href={item_menu.link}>{item_menu.title}</a></li>
-                    if(index == 0){
-                      return <li key={index} className="active"><a href={item_menu.link}>{item_menu.title}</a></li>
+                    if(item_menu.link == this.props.location.pathname){
+                      return <ItemMenu key={this.props.index} item_menu={item_menu} index={index } class_name="active" />
                     }
                     else{
-                      return <li key={index} className=""><a href={item_menu.link}>{item_menu.title}</a></li>
+                      return  <ItemMenu  key={this.props.index}  item_menu={item_menu} index={index } class_name="" />
                     }
                   }
                   )
@@ -347,4 +353,4 @@ handleSearchfunction = () => {
 	}
 }
 
-export default Topbanner;
+export default withRouter (Topbanner);

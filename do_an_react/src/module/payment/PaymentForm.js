@@ -130,7 +130,7 @@ class PaymentForm extends Component {
                 <div className="form-group">
                 <div className="title_form">Card Number</div>
                     <div className = "col-sm-5 ">
-                    <input type="text" name ="CardNumber" Value={this.state.CardNumber} onChange={this.handleChangeInput} className="form-control" id="" placeholder="họ và tên" />
+                    <input type="text" name ="CardNumber" value={this.state.CardNumber} onChange={this.handleChangeInput} className="form-control" id="" placeholder="họ và tên" />
                 </div>
                 </div>
 
@@ -138,11 +138,11 @@ class PaymentForm extends Component {
                 <div className="form-group">
                     <div className="title_form">Expire Date</div>
                     <div className = "col-sm-3 ">
-                    <input type="number" name ="month" Value={this.state.month} onChange={this.handleChangeInput} className="form-control" id="" placeholder="mật khẩu"  min="1" max="12"/>
+                    <input type="number" name ="month" value={this.state.month} onChange={this.handleChangeInput} className="form-control" id="" placeholder="mật khẩu"  min="1" max="12"/>
                     </div>
 
                     <div className = " col-sm-3 ">
-                    <input type="number" name ="year" Value={this.state.year} onChange={this.handleChangeInput} className="form-control" id="" placeholder="mật khẩu" min="21" max="99" />    
+                    <input type="number" name ="year" value={this.state.year} onChange={this.handleChangeInput} className="form-control" id="" placeholder="mật khẩu" min="21" max="99" />    
                     </div>
                 </div>
             </div>
@@ -154,7 +154,7 @@ class PaymentForm extends Component {
             <div className="form-group">
             <div className="title_form">Card Holder Name</div>
                 <div className = "col-sm-6 ">
-                    <input type="text" name ="cardholderName" Value={this.state.cardholderName} onChange={this.handleChangeInput} className="form-control" id="" placeholder="email" />
+                    <input type="text" name ="cardholderName" value={this.state.cardholderName} onChange={this.handleChangeInput} className="form-control" id="" placeholder="email" />
                 </div>
 
                 </div>
@@ -167,7 +167,7 @@ class PaymentForm extends Component {
                     <div className = " col-sm-7  ">
                         
                     
-                    <div class="radio">
+                    <div className="radio">
                         <label>
                             <input type="radio" name="1" id="input" value="" />
                             American Express

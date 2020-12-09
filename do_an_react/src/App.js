@@ -1,18 +1,34 @@
 
 import './App.css';
+import { useState } from 'react';
+import{Link,
+  Route,
+  BrowserRouter as Router,
+  Switch
+ } from "react-router-dom";
 
 import ReactDOM from 'react-dom';
 import Topbanner from './module/Topbanner/Topbanner';
-import Slider from './module/Slider/Slider';
-import Content from './module/Content/Content';
-import Lastest from './module/Lastest/Lastest';
-import Poster from './module/Poster/Poster';
-import Xbox from './module/Xbox/Xbox';
+import Trangchu from './Pages/Trangchu';
+import ButtonGoToGioHang from'./module/ButtonGoToGioHang';
+
+
+
 import Footer from './module/Footer/Footer';
-import { useState } from 'react';
-import Contact from './module/Contact/Contact';
+
+
 import SignUp from './module/Signup/SignUp';
-import Payment from './module/payment/Payment';
+
+import TrangLienHe from './Pages/TrangLienHe';
+
+import TrangChiTietSanPham from './Pages/TrangChiTietSanPham';
+
+import TrangThanhToan from './Pages/TrangThanhToan';
+import TrangGioHang from './Pages/TrangGioHang';
+import Poster from './module/Poster/Poster';
+
+
+
 
 
 
@@ -25,22 +41,57 @@ function App() {
       }
   return (
     <>
+    <Router>
     {
       (load_top_banner)?
     <Topbanner title_page={"Dat " + "Store " + Math.round(Math.random() * 100)} delete_me={handleUnMountTopBanner}/>
     :
     null
     }
-   	<Slider />
-    <Content />
-	  <Lastest/>
-	  <Poster/>
-    <Payment />
-    <Xbox  CSSTransition/>
-    <SignUp />
-    <Contact />
-    <Footer />
-  
+
+    
+      <Switch>
+
+      <Route path='/chi-tiet/:id_san_pham'>
+      <TrangChiTietSanPham />
+    </Route>
+
+    <Route path='/chi-tiet'>
+     <Poster />
+    </Route>
+
+
+
+    <Route path='/thanh-toan'>
+      <TrangThanhToan />
+    </Route>
+
+    
+    <Route path='/dang-ky'>
+      <SignUp />
+    </Route>
+
+    
+    <Route path='/lien-he'>
+      <TrangLienHe />
+      </Route>
+
+      <Route path='/gio-hang'>
+        <TrangGioHang />
+        
+      </Route>
+
+      <Route path='/'>
+    	  <Trangchu />
+      </Route>
+
+    </Switch>
+    
+    <ButtonGoToGioHang />
+      <Footer />
+
+    </Router>
+    
    </>
   );
 }

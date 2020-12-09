@@ -78,38 +78,34 @@ html, body{
 }
 .Payment_form .background_form_map {
   background: rgba(0, 0, 0, 0.2);
+  padding: 50px;
+}
+.Payment_form .title_form{
+  padding-bottom: 30px;
+}
+.button_gio_hang{
   padding: 10px;
+    position: fixed;
+    top: 10px;
+    right: 0;
+    font-size: 25px;
+    border-radius: 10px 0 0 10px;
+    background: rgb(240, 237, 237);
+    font-family: 'Glyphicons Halflings';
+    font-weight: normal;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: -3px 5px 10px rgb(15, 150, 228);
+   
+    
 }
 
-
-
-
-
-
-.fade-appear{
-  opacity: 0;
-  z-index: 1;
-}
-.fade-appear.fade-appear-active{
-  opacity: 1;
-  transition: opacity 300ms linear;
-}
-.fade-exit{
-  opacity: 1;
-}
-.fade-exit.fade-exit-active{
-  opacity: 0;
-  transition: opacity 300ms linear;
-}
-.fade-exit-done{
-  opacity: 0;
-}
-.fade-enter{
-  opacity: 0;
-}
-.fade-enter.fade-enter-active{
- opacity: 1;
- transition: opacity 300ms linear;
+.img-responsive, .thumbnail > img, .thumbnail a > img, .carousel-inner > .item > img, .carousel-inner > .item > a > img {
+     
+      width: 100%;
+    
+      max-height: 1000px;
+      overflow: hidden;
 }
 @font-face {
    font-family: 'OpenSans-Regular';
@@ -134,6 +130,17 @@ body a{
 	-o-transition:0.5s all;
 	-ms-transition:0.5s all;
 }
+.include_action_gio_hang{
+  display: flex;
+}
+.form-control_number_input{
+  width: 40px;
+}
+
+.included_item_gio_hang{
+  padding: 20px;
+}
+
 .row{
 	margin:0;
 }	
@@ -375,6 +382,7 @@ ul.callbacks_tabs.callbacks1_tabs {
 	position: relative;
 	max-width: 100%;
 }
+
 .nbs-flexisel-ul {
 	position: relative;
 	width: 9999px;
@@ -383,6 +391,7 @@ ul.callbacks_tabs.callbacks1_tabs {
 	list-style-type: none;
 	text-align: center;
 }
+
 .nbs-flexisel-inner {
 	overflow: hidden;
 }
